@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navigation-bar-color: #404258;
+    --btn-color: #3282b8;
+}
+
+body {
+    opacity: 0;
+    background: #1b262c;
+}
+
+main {
+    display: flex;
+}
