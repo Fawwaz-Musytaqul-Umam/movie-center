@@ -1,19 +1,23 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url('./navigation-bar.css');
 
 :root {
-    --navigation-bar-color: #404258;
-    --btn-color: #3282b8;
+	--navigation-bar-color: #11101d;
+	/* --link-color: #3282b8; */
+	--body-color: #2a2b3a;
+	--shadow-color: rgba(252, 252, 252, 0.336);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    opacity: 0;
-    background: #1b262c;
+	opacity: 0;
+	background: var(--body-color);
 }
 
 main {
-    display: flex;
+	display: flex;
 }

@@ -1,25 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Movie Center</title>
-    </head>
-    <body>
-        <date-bar></date-bar>
-        <main>
-            <navigation-bar></navigation-bar>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+		<title>Movie Center</title>
+	</head>
 
-            <section id="content">
-                <search-box></search-box>
+	<body>
+		<date-bar></date-bar>
 
-                <movie-container>
-                    <trending-movies></trending-movies>
-                    <movie-list></movie-list>
-                    <favourite-movie></favourite-movie>
-                </movie-container>
-            </section>
-        </main>
-    </body>
+		<main>
+			<nav class="navigation-bar">
+				<ul>
+					<li>
+						<i class="bx bx-menu" id="menuBtn"></i>
+					</li>
+					<li>
+						<a href="#trendingMovies">
+							<i class="bx bxs-hot"></i>
+							<span class="links-name">Trending</span>
+						</a>
+					</li>
+					<li>
+						<a href="#favouriteMovies">
+							<i class="bx bxs-heart"></i>
+							<span class="links-name">Trending</span>
+						</a>
+					</li>
+					<li>
+						<a href="#allMovies">
+							<i class="bx bxs-movie-play"></i>
+							<span class="links-name">Trending</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+
+			<section id="content">
+				<search-box></search-box>
+
+				<section>
+					<trending-movies></trending-movies>
+					<favourite-movies></favourite-movies>
+					<movie-list></movie-list>
+				</section>
+			</section>
+		</main>
+	</body>
 </html>

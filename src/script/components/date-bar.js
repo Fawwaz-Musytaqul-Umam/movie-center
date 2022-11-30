@@ -18,6 +18,8 @@ class DateBar extends HTMLElement {
                 top: 0;
                 right: 55px;
                 background-color: var(--navigation-bar-color);
+                box-shadow: 0 0 5px var(--shadow-color);
+                z-index: 9999;
             }
             
             div {
