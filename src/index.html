@@ -11,35 +11,37 @@
 	<body>
 		<date-bar></date-bar>
 
+		<nav class="menu-bar">
+			<ul>
+				<li class="menu-header">
+					<span class="text-logo">Movie Center</span>
+					<i class="bx bx-menu" id="menuToggleBtn"></i>
+				</li>
+				<li>
+					<a href="#trendingMovies">
+						<i class="bx bxs-hot"></i>
+						<span class="links-name">Trending</span>
+					</a>
+				</li>
+				<li>
+					<a href="#favouriteMovies">
+						<i class="bx bxs-heart"></i>
+						<span class="links-name">Favourite</span>
+					</a>
+				</li>
+				<li>
+					<a href="#allMovies">
+						<i class="bx bxs-movie-play"></i>
+						<span class="links-name">All Movies</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
 		<main>
-			<nav class="navigation-bar">
-				<ul>
-					<li>
-						<i class="bx bx-menu" id="menuBtn"></i>
-					</li>
-					<li>
-						<a href="#trendingMovies">
-							<i class="bx bxs-hot"></i>
-							<span class="links-name">Trending</span>
-						</a>
-					</li>
-					<li>
-						<a href="#favouriteMovies">
-							<i class="bx bxs-heart"></i>
-							<span class="links-name">Trending</span>
-						</a>
-					</li>
-					<li>
-						<a href="#allMovies">
-							<i class="bx bxs-movie-play"></i>
-							<span class="links-name">Trending</span>
-						</a>
-					</li>
-				</ul>
-			</nav>
+			<search-box></search-box>
 
 			<section id="content">
-				<search-box></search-box>
 
 				<section>
 					<trending-movies></trending-movies>

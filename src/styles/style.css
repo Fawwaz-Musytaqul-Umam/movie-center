@@ -1,10 +1,10 @@
-@import url('./navigation-bar.css');
+@import url('./menu-bar.css');
 
 :root {
-	--navigation-bar-color: #11101d;
-	/* --link-color: #3282b8; */
-	--body-color: #2a2b3a;
 	--shadow-color: rgba(252, 252, 252, 0.336);
+	--body-color: #18191a;
+    --menu-bar-color: #242526;
+    --text-color: #ccc;
 }
 
 * {
@@ -15,9 +15,23 @@
 
 body {
 	opacity: 0;
+	color: var(--text-color);
 	background: var(--body-color);
 }
 
 main {
-	display: flex;
+	position: absolute;
+	left: 80px;
+    width: calc(100% - 80px);
+    height: 100vh;
+    background-color: var(--body-color);
+}
+
+@media screen and (max-width: 768px) {
+	main {
+		top: 50px;
+		left: 0;
+		width: 100vw;
+		height: calc(100% - 50px);
+	}
 }

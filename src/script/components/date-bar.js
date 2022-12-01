@@ -7,17 +7,13 @@ class DateBar extends HTMLElement {
     }
 
     connectedCallback() {
-        this.render();
-    }
-
-    render() {
         this.shadowDOM.innerHTML = /*html*/ `
         <style>
             :host {
                 position: fixed;
                 top: 0;
                 right: 55px;
-                background-color: var(--navigation-bar-color);
+                background-color: var(--menu-bar-color);
                 box-shadow: 0 0 5px var(--shadow-color);
                 z-index: 9999;
             }
@@ -27,7 +23,7 @@ class DateBar extends HTMLElement {
                 color: white;
                 font-size: 1.2em;
             }
-
+    
         </style>
         <div>
             ${moment().format('LL')}
