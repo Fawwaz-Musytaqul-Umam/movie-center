@@ -14,9 +14,9 @@
 }
 
 body {
-	opacity: 0;
 	color: var(--text-color);
 	background: var(--body-color);
+	opacity: 0;
 }
 
 main {
@@ -24,7 +24,13 @@ main {
 	left: 80px;
     width: calc(100% - 80px);
     height: 100vh;
+	padding-top: 120px;
     background-color: var(--body-color);
+}
+
+#content {
+	max-width: 90%;
+	margin: auto;
 }
 
 @media screen and (max-width: 768px) {

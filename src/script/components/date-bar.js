@@ -15,15 +15,26 @@ class DateBar extends HTMLElement {
                 right: 55px;
                 background-color: var(--menu-bar-color);
                 box-shadow: 0 0 5px var(--shadow-color);
-                z-index: 9999;
+                z-index: 90;
             }
             
             div {
                 padding: 15px;
-                color: white;
                 font-size: 1.2em;
             }
     
+            @media screen and (max-width: 768px) {
+                :host {
+                    top: 50px;
+                    right: 0;
+                }
+
+                div {
+                    width: max-content;
+                    padding: 7px;
+                    font-size: 2.5vmax
+                }
+            }
         </style>
         <div>
             ${moment().format('LL')}

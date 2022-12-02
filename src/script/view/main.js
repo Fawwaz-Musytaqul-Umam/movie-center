@@ -1,19 +1,33 @@
+import '../components/search-box.js';
+
 const main = () => {
-    // body transition
+	// body transition
 	setTimeout(() => {
 		document.body.style.opacity = 1;
 		document.body.style.transition = 'opacity 1s ease-out';
 	}, 1300);
 
-    // Menu bar open/close
+	// Menu bar
 	const menuBar = document.querySelector('.menu-bar');
-	const menuBtn = menuBar.querySelector('#menuToggleBtn');
+	const menuOpenBtn = menuBar.querySelector('#menuToggleBtn');
+	const menuListElement = menuBar.querySelectorAll('.links')
 
-	menuBtn.addEventListener('click', function () {
-        this.classList.toggle('bx-menu')
-        this.classList.toggle('bx-menu-alt-right')
+	menuOpenBtn.addEventListener('click', function () {
+		this.classList.toggle('bx-menu');
+		this.classList.toggle('bx-menu-alt-right');
 
 		menuBar.classList.toggle('opened');
+	});
+
+	menuListElement.forEach(e => {
+		e.addEventListener('click',function () {
+			setTimeout(() => {
+				menuOpenBtn.classList.toggle('bx-menu');
+				menuOpenBtn.classList.toggle('bx-menu-alt-right');
+	
+				menuBar.classList.toggle('opened');
+			}, 300);
+		})
 	});
 };
 
