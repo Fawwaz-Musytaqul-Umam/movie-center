@@ -24,7 +24,7 @@ main {
 	left: 80px;
     width: calc(100% - 80px);
     height: 100vh;
-	padding-top: 120px;
+	padding-top: 100px;
     background-color: var(--body-color);
 }
 

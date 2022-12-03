@@ -1,4 +1,4 @@
-class SearchBox extends HTMLElement {
+class SearchBar extends HTMLElement {
 	constructor() {
 		super();
 		this.shadowDOM = this.attachShadow({ mode: 'open' });
@@ -15,6 +15,7 @@ class SearchBox extends HTMLElement {
                 padding: 30px;
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 background: var(--menu-bar-color);
                 box-shadow: 0 3px 10px var(--shadow-color);
             }
@@ -22,14 +23,14 @@ class SearchBox extends HTMLElement {
             div,
             div input,
             div button{
-                border-radius: 15px;
+                font-size: 1em;
+                border-radius: 10px;
             }
 
             div input {
                 width: 75%;
                 padding: 16px;
-                font-size: 1.1em;
-                background: #000;
+                background: var(--body-color);
                 border: 0;
             }
 
@@ -42,7 +43,7 @@ class SearchBox extends HTMLElement {
             div button {
                 width: 23%;
                 padding: 16px;
-                background: #000;
+                background: var(--body-color);
                 border: 0;
                 cursor: pointer;
             }
@@ -55,32 +56,20 @@ class SearchBox extends HTMLElement {
             @media screen and (max-width: 800px) {
                 div {
                     position: static;
-                    width: 80%;
-                    padding: 15px 10px;
-                    align-items: center;
+                    max-width: 80%;
+                    padding: 10px 13px;
                 }
 
-                div input {
-                    margin-bottom: 12px;
-                    font-size: 1em;
-                }
-                
                 div button,
                 div input {
-                    margin: 0;
-                }
-            }
-            
-            @media screen and (max-width: 550px) {
-                div input,
-                div button {
                     height: 5vmax;
+                    margin: 0;
                     padding: 7px 10px;
-                    font-size: 1.5vmax;
+                    font-size: 1.4vmax;
                 }
 
-                div input{
-                    width: 65%
+                div input {
+                    width: 65%;
                 }
 
                 div button {
@@ -95,4 +84,4 @@ class SearchBox extends HTMLElement {
 	}
 }
 
-customElements.define('search-box', SearchBox);
+customElements.define('search-bar', SearchBar);

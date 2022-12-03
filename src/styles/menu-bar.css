@@ -5,7 +5,8 @@
 	padding: 10px 14px;
 	background-color: var(--menu-bar-color);
 	border-right: 1px solid var(--shadow-color);
-	transition: all 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+	transition: 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+	overflow: auto;
 	z-index: 91;
 }
 
@@ -112,7 +113,7 @@
 	
 	.menu-bar.opened .menu-header {
 		padding-top: 40px;
-		justify-content: space-evenly;
+		justify-content: space-between;
 	}
 
 	.menu-bar.opened .menu-header ~ li {
@@ -121,6 +122,6 @@
 	}
 
 	.menu-bar.opened #menuToggleBtn {
-		transform: translateX(10vw);
+		transform: translateX(0);
 	}
 }

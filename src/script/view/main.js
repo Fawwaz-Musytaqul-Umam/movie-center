@@ -1,4 +1,8 @@
-import '../components/search-box.js';
+import '../components/search-bar.js';
+
+const menuBar = document.querySelector('.menu-bar');
+const menuToggleBtn = menuBar.querySelector('#menuToggleBtn');
+const menuListElement = menuBar.querySelectorAll('.links');
 
 const main = () => {
 	// body transition
@@ -8,27 +12,24 @@ const main = () => {
 	}, 1300);
 
 	// Menu bar
-	const menuBar = document.querySelector('.menu-bar');
-	const menuOpenBtn = menuBar.querySelector('#menuToggleBtn');
-	const menuListElement = menuBar.querySelectorAll('.links')
-
-	menuOpenBtn.addEventListener('click', function () {
-		this.classList.toggle('bx-menu');
-		this.classList.toggle('bx-menu-alt-right');
-
-		menuBar.classList.toggle('opened');
-	});
-
-	menuListElement.forEach(e => {
-		e.addEventListener('click',function () {
-			setTimeout(() => {
-				menuOpenBtn.classList.toggle('bx-menu');
-				menuOpenBtn.classList.toggle('bx-menu-alt-right');
-	
-				menuBar.classList.toggle('opened');
-			}, 300);
-		})
-	});
+	menuToggleBtn.addEventListener('click', menuToggleEvent);
+	menuListElement.forEach(e => e.addEventListener('click', menuLinksEvent));
 };
+
+function menuToggleEvent() {
+	this.classList.toggle('bx-menu');
+	this.classList.toggle('bx-menu-alt-right');
+
+	menuBar.classList.toggle('opened');
+}
+
+function menuLinksEvent() {
+	setTimeout(() => {
+		menuToggleBtn.classList.add('bx-menu');
+		menuToggleBtn.classList.remove('bx-menu-alt-right');
+
+		menuBar.classList.remove('opened');
+	}, 300);
+}
 
 export default main;
