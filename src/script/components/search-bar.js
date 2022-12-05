@@ -4,12 +4,25 @@ class SearchBar extends HTMLElement {
 		this.shadowDOM = this.attachShadow({ mode: 'open' });
 	}
 
+	set clickEvent(event) {
+		this._clickEvent = event;
+		this.render();
+	}
+
+	get value() {
+		return this.shadowDOM.querySelector('input').value;
+	}
+
 	connectedCallback() {
+		this.render();
+	}
+
+	render() {
 		this.shadowDOM.innerHTML = /*html*/ `
         <style>
             div {
                 position: sticky;
-                top: 70px;
+                top: 50px;
                 width: 600px;
                 margin: auto;
                 padding: 30px;
@@ -81,6 +94,8 @@ class SearchBar extends HTMLElement {
             <input type="search" id="searchBoxInput" placeholder="Search Movie...">
             <button id="searchBtn">SEARCH</button>
         </div>`;
+
+		this.shadowDOM.querySelector('button').addEventListener('click', this._clickEvent);
 	}
 }
 
