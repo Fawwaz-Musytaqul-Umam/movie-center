@@ -1,4 +1,3 @@
-import 'regenerator-runtime/runtime.js';
 import '../components/search-bar.js';
 import '../components/movie-list.js';
 import DataSource from '../data/api/data-source.js';
@@ -9,17 +8,21 @@ const main = () => {
 
 	setTimeout(() => {
 		document.body.style.opacity = 1;
-		document.body.style.transition = 'opacity 1s ease-out';
-	}, 1300);
+		document.body.style.transition = 'opacity 1.2s ease-out';
+	}, 300);
 
-	const onButtonSearchClicked = () => {
-		const result = DataSource.searchMovies(searchElement.value)
-		renderResult(result)
+	const searchMovies = async () => {
+		try {
+			const results = await DataSource.searchMovies(searchElement.value);
+			renderMovie(results);
+		} catch (error) {
+			fallbackResult(error);
+		}
 	};
 
-	searchElement.clickEvent = onButtonSearchClicked;
+	searchElement.clickEvent = searchMovies;
 
-	const renderResult = results => {
+	const renderMovie = results => {
 		movieListElement.movies = results;
 	};
 

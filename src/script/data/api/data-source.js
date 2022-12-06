@@ -2,13 +2,17 @@ const axios = require('axios').default;
 
 class DataSource {
 	static searchMovies(keyword) {
-		return axios({
-			method: 'get',
-			url: `http://www.omdbapi.com/?apikey=6075755&s=${keyword}`,
-		})
+		return axios
+			.get(`https://api.themoviedb.org/3/search/movie`, {
+				params: {
+					api_key: '5f3e83eca61b759ecedbeb4ef36325dd',
+					query: keyword,
+					include_adult: false,
+				},
+			})
 			.then(response => {
-				if (response.data.Search) {
-					return Promise.resolve(response.data.Search);
+				if (response.data.results.length) {
+					return Promise.resolve(response.data.results);
 				} else {
 					return Promise.reject(`${keyword} is Not Found!`);
 				}

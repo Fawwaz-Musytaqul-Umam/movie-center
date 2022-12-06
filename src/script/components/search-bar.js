@@ -22,7 +22,7 @@ class SearchBar extends HTMLElement {
         <style>
             div {
                 position: sticky;
-                top: 50px;
+                top: 70px;
                 width: 600px;
                 margin: auto;
                 padding: 30px;
