@@ -46,7 +46,6 @@ class MovieItem extends HTMLElement {
 			</div>
             <div class="movie-text">
 				<p>${this._movie.overview}</p>
-				<i class="bx bxs-heart"></i>
 			</div>
         </div>`;
 	}

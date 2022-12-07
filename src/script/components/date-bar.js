@@ -1,45 +1,33 @@
 import moment from 'moment/moment';
 
 class DateBar extends HTMLElement {
-    constructor() {
-        super();
-        this.shadowDOM = this.attachShadow({ mode: 'open' });
-    }
+	constructor() {
+		super();
+		this.shadowDOM = this.attachShadow({ mode: 'open' });
+	}
 
-    connectedCallback() {
-        this.shadowDOM.innerHTML = /*html*/ `
+	connectedCallback() {
+		this.shadowDOM.innerHTML = /*html*/ `
         <style>
-            :host {
-                position: fixed;
-                top: 0;
-                right: 55px;
-                background-color: var(--menu-bar-color);
-                box-shadow: 0 0 5px var(--shadow-color);
-                z-index: 90;
-            }
             
             div {
-                padding: 15px;
-                font-size: 1.2em;
+                width: 660px;
+                margin: 25px auto;
+                padding-block: 15px;
             }
-    
-            @media screen and (max-width: 768px) {
-                :host {
-                    top: 50px;
-                    right: 0;
-                }
-
+            
+            @media screen and (max-width: 800px) {
                 div {
-                    width: max-content;
-                    padding: 7px;
-                    font-size: 2.5vmax
+                    width: 80%;
+                    padding-block: 7px;
+                    font-size: 2vmax;
                 }
             }
         </style>
         <div>
-            ${moment().format('LL')}
+            <h2>${moment().format('LL')}</h2>
         </div>`;
-    }
+	}
 }
 
 customElements.define('date-bar', DateBar);

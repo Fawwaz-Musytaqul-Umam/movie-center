@@ -1,5 +1,3 @@
-@import url('./menu-bar.css');
-
 :root {
 	--shadow-color: rgba(252, 252, 252, 0.336);
 	--body-color: #18191a;
@@ -20,9 +18,6 @@ body {
 }
 
 main {
-	position: absolute;
-	left: 80px;
-    width: calc(100% - 80px);
     min-height: 100vh;
 	padding-top: 100px;
     background-color: var(--body-color);
@@ -39,6 +34,5 @@ main {
 		top: 50px;
 		left: 0;
 		width: 100vw;
-		height: calc(100% - 50px);
 	}
 }

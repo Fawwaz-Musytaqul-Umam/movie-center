@@ -19,7 +19,6 @@ class MovieList extends HTMLElement {
 			.heading {
 				width: 100%;
 				padding-bottom: 15px;
-				font-size: 2em;
 				text-align: center;
 			}
 		</style>
@@ -43,8 +42,10 @@ class MovieList extends HTMLElement {
 	renderError(message) {
 		this.innerHTML = /*html*/ `
 		<style>
-			h2 {
+			#allMovies h2 {
+				margin: 20px 0;
 				text-align: center;
+				font-size: 3.7vmin;
 			}
 		</style>
 		<div id="allMovies">
