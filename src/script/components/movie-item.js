@@ -1,18 +1,23 @@
 class MovieItem extends HTMLElement {
+	constructor() {
+		super()
+		this.shadowDOM = this.attachShadow({mode: 'open'})
+	}
+
 	set movie(movie) {
 		this._movie = movie;
 		this.render();
 	}
 
 	render() {
-		this.innerHTML = /*html*/ `
+		this.shadowDOM.innerHTML = /*html*/ `
 		<style>
-			movie-item {
+			:host {
 				width: 23vmax;
 				margin: 25px;
 				padding: 15px;
 				font-size: 1.1em;
-				background: var(--menu-bar-color);
+				background: var(--header-color);
 				border-radius: 10px;
 			}
 			

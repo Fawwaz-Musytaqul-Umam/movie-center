@@ -18,7 +18,9 @@ class DataSource {
 					return Promise.reject(`${keyword} is Not Found!`);
 				}
 			})
-			.catch(error => Promise.reject(error));
+			.catch(error => {
+				return Promise.reject(error);
+			});
 	}
 
 	static trendingMovies() {
@@ -26,6 +28,7 @@ class DataSource {
 			.get(`https://api.themoviedb.org/3/movie/popular`, {
 				params: {
 					api_key: API_KEY,
+					region: 'ID',
 				},
 			})
 			.then(response => {

@@ -1,15 +1,20 @@
 import './movie-item.js';
 
 class TrendingMovies extends HTMLElement {
+	constructor() {
+		super();
+		this.shadowDOM = this.attachShadow({mode: 'open'})
+	}
+
 	set movies(movies) {
 		this._movies = movies;
 		this.render();
 	}
 
 	render() {
-		this.innerHTML = /*html*/ `
+		this.shadowDOM.innerHTML = /*html*/ `
         <style>
-            #allMovies {
+            #trendingMovie {
                 max-width: 100%;
                 display: flex;
                 justify-content: space-evenly;
@@ -22,16 +27,15 @@ class TrendingMovies extends HTMLElement {
                 text-align: center;
             }
         </style>
-        <div id="allMovies">
-            <h2 class="heading">Trending Movies</h2>
+        <div id="trendingMovie">
+            <h1 class="heading">Trending Movies</h1>
         </div>`;
 
 		this.createMovieItemElement();
 	}
 
 	createMovieItemElement() {
-		const container = this.querySelector('div');
-		container.innerHTML = `<h2 class="heading">Trending Movies</h2>`;
+		const container = this.shadowDOM.querySelector('#trendingMovie');
 
 		for (const movie of this._movies) {
 			const movieItemElement = document.createElement('movie-item');
@@ -42,14 +46,14 @@ class TrendingMovies extends HTMLElement {
 	}
 
 	renderError(message) {
-		this.innerHTML = /*html*/ `
+		this.shadowDOM.innerHTML = /*html*/ `
 		<style>
 			h2 {
 				text-align: center;
 				font-size: 3.7vmin;
 			}
 		</style>
-		<div id="allMovies">
+		<div id="trendingMovie">
 			<h2>${message}</h2>
 		</div>`;
 	}

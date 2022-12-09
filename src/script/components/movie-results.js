@@ -1,15 +1,20 @@
 import './movie-item.js';
 
-class MovieList extends HTMLElement {
+class MovieResults extends HTMLElement {
+	constructor() {
+		super();
+		this.shadowDOM = this.attachShadow({ mode: 'open' });
+	}
+
 	set movies(movies) {
 		this._movies = movies;
 		this.render();
 	}
 
 	render() {
-		this.innerHTML = /*html*/ `
+		this.shadowDOM.innerHTML = /*html*/ `
 		<style>
-			#allMovies {
+			#movieResults {
 				max-width: 100%;
 				display: flex;
 				justify-content: space-evenly;
@@ -22,14 +27,15 @@ class MovieList extends HTMLElement {
 				text-align: center;
 			}
 		</style>
-		<div id="allMovies"></div>`;
-		
+		<div id="movieResults">
+			<h1 class="heading">Results</h1>
+		</div>`;
+
 		this.createMovieItemElement();
 	}
 
 	createMovieItemElement() {
-		const container = this.querySelector('div');
-		container.innerHTML = `<h2 class="heading">All Movies</h2>`;
+		const container = this.shadowDOM.querySelector('#movieResults');
 
 		for (const movie of this._movies) {
 			const movieItemElement = document.createElement('movie-item');
@@ -40,18 +46,18 @@ class MovieList extends HTMLElement {
 	}
 
 	renderError(message) {
-		this.innerHTML = /*html*/ `
+		this.shadowDOM.innerHTML = /*html*/ `
 		<style>
-			#allMovies h2 {
-				margin: 20px 0;
+			#movieResults h1 {
+				margin: 50px 0;
 				text-align: center;
 				font-size: 3.7vmin;
 			}
 		</style>
-		<div id="allMovies">
-			<h2>${message}</h2>
+		<div id="movieResults">
+			<h1>${message}</h1>
 		</div>`;
 	}
 }
 
-customElements.define('movie-list', MovieList);
+customElements.define('movie-results', MovieResults);
