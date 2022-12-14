@@ -17,7 +17,7 @@ class MovieItem extends HTMLElement {
 				margin: 25px;
 				padding: 15px;
 				font-size: 1.1em;
-				background: var(--header-color);
+				background: var(--main-color);
 				border-radius: 10px;
 			}
 			
@@ -34,12 +34,14 @@ class MovieItem extends HTMLElement {
 
 			.movie-container p {
 				max-height: 300px;
+				line-height: 28px;
 				overflow: hidden;
 			}
 
 			@media screen and (max-width: 768px) {
-				movie-item {
+				:host {
 					width: 100%;
+					margin: 0 0 27px;
 				}
 			}
 		</style>

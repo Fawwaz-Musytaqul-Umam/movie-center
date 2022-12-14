@@ -8,7 +8,7 @@ class SearchBar extends HTMLElement {
 		this._clickEvent = event;
 		this.render();
 	}
-    
+
 	get value() {
 		return this.shadowDOM.querySelector('input').value;
 	}
@@ -29,8 +29,8 @@ class SearchBar extends HTMLElement {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                background: var(--header-color);
-                box-shadow: 0 3px 10px var(--shadow-color);
+                background: var(--main-color);
+                box-shadow: 0 0 10px 1px #949494;
             }
 
             div,
@@ -71,6 +71,7 @@ class SearchBar extends HTMLElement {
                     position: static;
                     max-width: 80%;
                     padding: 10px 13px;
+                    box-shadow: 0 0 5px #949494;
                 }
 
                 div button,

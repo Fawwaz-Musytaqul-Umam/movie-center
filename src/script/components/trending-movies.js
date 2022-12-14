@@ -24,6 +24,7 @@ class TrendingMovies extends HTMLElement {
             .heading {
                 width: 100%;
                 padding-bottom: 15px;
+				font-size: 2em;
                 text-align: center;
             }
         </style>
@@ -54,7 +55,7 @@ class TrendingMovies extends HTMLElement {
 			}
 		</style>
 		<div id="trendingMovie">
-			<h2>${message}</h2>
+			<h1>${message}</h1>
 		</div>`;
 	}
 }

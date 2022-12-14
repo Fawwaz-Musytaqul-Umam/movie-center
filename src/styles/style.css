@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 :root {
-	--shadow-color: rgba(252, 252, 252, 0.336);
 	--body-color: #18191a;
-    --header-color: #242526;
+    --main-color: #242526;
     --text-color: #ccc;
 }
 
@@ -12,6 +13,7 @@
 }
 
 body {
+	font-family: 'Montserrat';
 	color: var(--text-color);
 	background: var(--body-color);
 }
@@ -19,10 +21,10 @@ body {
 header {
 	height: 80px;
 	padding-left: 40px;
-	font-size: 1.2vmax;
+	font-size: 1.1vmax;
 	line-height: 80px;
-	background-color: var(--header-color);
-	border-bottom: 1px solid var(--shadow-color);
+	background-color: var(--main-color);
+	border-bottom: 2px solid #474747;
 }
 
 main {
