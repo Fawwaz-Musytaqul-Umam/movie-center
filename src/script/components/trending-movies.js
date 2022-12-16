@@ -1,9 +1,9 @@
+import MovieList from './movie-list.js';
 import './movie-item.js';
 
-class TrendingMovies extends HTMLElement {
+class TrendingMovies extends MovieList {
 	constructor() {
 		super();
-		this.shadowDOM = this.attachShadow({mode: 'open'})
 	}
 
 	set movies(movies) {
@@ -14,49 +14,37 @@ class TrendingMovies extends HTMLElement {
 	render() {
 		this.shadowDOM.innerHTML = /*html*/ `
         <style>
-            #trendingMovie {
-                max-width: 100%;
-                display: flex;
-                justify-content: space-evenly;
-                flex-wrap: wrap;
+            #trendingMovies {
+                ${this.containerStyle}
             }
             
             .heading {
                 width: 100%;
                 padding-bottom: 15px;
-				font-size: 2em;
+				font-size: ${this.headingFontSize};
                 text-align: center;
             }
         </style>
-        <div id="trendingMovie">
+        <div id="trendingMovies">
             <h1 class="heading">Trending Movies</h1>
         </div>`;
 
 		this.createMovieItemElement();
 	}
 
+	renderError(message) {
+		super.renderError(message);
+	}
+
 	createMovieItemElement() {
-		const container = this.shadowDOM.querySelector('#trendingMovie');
+		const movieContainer = this.shadowDOM.querySelector('#trendingMovies');
 
 		for (const movie of this._movies) {
 			const movieItemElement = document.createElement('movie-item');
 			movieItemElement.movie = movie;
 
-			container.append(movieItemElement);
+			movieContainer.append(movieItemElement);
 		}
-	}
-
-	renderError(message) {
-		this.shadowDOM.innerHTML = /*html*/ `
-		<style>
-			h2 {
-				text-align: center;
-				font-size: 3.7vmin;
-			}
-		</style>
-		<div id="trendingMovie">
-			<h1>${message}</h1>
-		</div>`;
 	}
 }
 

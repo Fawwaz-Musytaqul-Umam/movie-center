@@ -3,9 +3,9 @@ const { merge } = require('webpack-merge');
 const path = require('path');
 
 module.exports = merge(common, {
-	mode: 'development',
+	mode: 'production',
 	output: {
-		filename: 'app.js',
+		filename: 'app.[contenthash].js',
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
 	},

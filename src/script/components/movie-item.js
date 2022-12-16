@@ -32,6 +32,10 @@ class MovieItem extends HTMLElement {
 				object-position: center;
 			}
 
+			.title {
+				font-size: 1.2em;
+			}
+			
 			.movie-container p {
 				max-height: 300px;
 				line-height: 28px;
@@ -42,6 +46,10 @@ class MovieItem extends HTMLElement {
 				:host {
 					width: 100%;
 					margin: 0 0 27px;
+				}
+
+				.title {
+					font-size: 3vmax;
 				}
 			}
 		</style>
