@@ -1,5 +1,3 @@
-import './movie-item.js';
-
 class MovieList extends HTMLElement {
 	constructor() {
 		super();
