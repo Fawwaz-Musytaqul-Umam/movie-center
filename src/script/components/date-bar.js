@@ -9,10 +9,9 @@ class DateBar extends HTMLElement {
 	connectedCallback() {
 		this.shadowDOM.innerHTML = /*html*/ `
         <style>
-            
             div {
                 width: 660px;
-                margin: 25px auto;
+                margin: 25px auto 10px;
                 padding-block: 15px;
             }
             
@@ -20,7 +19,7 @@ class DateBar extends HTMLElement {
                 div {
                     width: 80%;
                     padding-block: 7px;
-                    font-size: 2vmax;
+                    font-size: calc(1.1vmin + 7px);
                 }
             }
         </style>

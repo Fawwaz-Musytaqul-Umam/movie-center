@@ -2,7 +2,7 @@ class MovieList extends HTMLElement {
 	constructor() {
 		super();
         
-		this.headingFontSize = '2.5vmax';
+		this.headingFontSize = 'calc(2vmin + 15px)';
 		this.containerStyle = `max-width:100%;display:flex;justify-content:space-evenly;flex-wrap:wrap;`;
 		this.shadowDOM = this.attachShadow({ mode: 'open' });
 	}

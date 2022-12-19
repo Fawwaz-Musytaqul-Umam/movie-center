@@ -20,40 +20,40 @@ class SearchBar extends HTMLElement {
 	render() {
 		this.shadowDOM.innerHTML = /*html*/ `
         <style>
-            div {
+            .search-bar {
                 position: sticky;
                 top: 70px;
                 width: 600px;
                 margin: auto;
-                padding: 30px;
+                padding: 25px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 background: var(--main-color);
-                box-shadow: 0 0 10px 1px #949494;
+                box-shadow: 0 0 6px #949494;
             }
 
-            div,
-            div input,
-            div button{
-                font-size: 1em;
+            .search-bar,
+            .search-bar input,
+            .search-bar button{
+                font-size: calc(2vmin + 3px);
                 border-radius: 10px;
             }
 
-            div input {
+            .search-bar input {
                 width: 75%;
                 padding: 16px;
                 background: var(--body-color);
                 border: 0;
             }
 
-            div input,
-            div input::placeholder,
-            div button {
+            .search-bar input,
+            .search-bar input::placeholder,
+            .search-bar button {
                 color: var(--text-color);
             }
 
-            div button {
+            .search-bar button {
                 width: 23%;
                 padding: 16px;
                 background: var(--body-color);
@@ -61,37 +61,36 @@ class SearchBar extends HTMLElement {
                 cursor: pointer;
             }
 
-            div button:active{
+            .search-bar button:active{
                 color: #000;
                 background-color: var(--text-color);
             }
 
             @media screen and (max-width: 800px) {
-                div {
+                .search-bar {
                     position: static;
-                    max-width: 80%;
-                    padding: 10px 13px;
-                    box-shadow: 0 0 5px #949494;
+                    max-width: 85%;
+                    padding: 10px 8px;
+                    box-shadow: 0 0 3px #949494;
                 }
 
-                div button,
-                div input {
+                .search-bar button,
+                .search-bar input {
                     height: 5vmax;
                     margin: 0;
                     padding: 7px 10px;
-                    font-size: 1.4vmax;
                 }
 
-                div input {
+                .search-bar input {
                     width: 65%;
                 }
 
-                div button {
+                .search-bar button {
                     width: 30%;
                 }
             }
         </style>
-        <div>
+        <div class="search-bar">
             <input type="search" id="searchBoxInput" placeholder="Search Movie...">
             <button id="searchBtn">SEARCH</button>
         </div>`;

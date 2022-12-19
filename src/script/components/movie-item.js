@@ -14,31 +14,28 @@ class MovieItem extends HTMLElement {
 		<style>
 			:host {
 				width: 23vmax;
-				margin: 25px;
+				margin-block: 35px;
 				padding: 15px;
-				font-size: 1.1em;
 				background: var(--main-color);
+				box-shadow: 1px 3px 6px rgba(255, 255, 255, .2);
 				border-radius: 10px;
 			}
-			
-			.movie-container i:hover{
-				color: red;
-			}
 
-			.movie-container .movie-image {
+			.movie-header .title {
+				font-size: calc(1.8vmin + 10px);
+			}
+			
+			.movie-header .movie-image {
 				width: 100%;
 				max-height: 300px;
 				object-fit: cover;
 				object-position: center;
 			}
-
-			.title {
-				font-size: 1.2em;
-			}
 			
 			.movie-container p {
 				max-height: 300px;
-				line-height: 28px;
+				font-size: 1em;
+				line-height: 26px;
 				overflow: hidden;
 			}
 
@@ -46,10 +43,6 @@ class MovieItem extends HTMLElement {
 				:host {
 					width: 100%;
 					margin: 0 0 27px;
-				}
-
-				.title {
-					font-size: 3vmax;
 				}
 			}
 		</style>
@@ -59,8 +52,8 @@ class MovieItem extends HTMLElement {
 				<h2 class="title">${this._movie.title}</h2>
 				<img src="https://image.tmdb.org/t/p/w500${this._movie.poster_path}" class="movie-image">
 			</div>
-            <div class="movie-text">
-				<p>${this._movie.overview}</p>
+            <div class="inner">
+				<p class="movie-text">${this._movie.overview}</p>
 			</div>
         </div>`;
 	}
